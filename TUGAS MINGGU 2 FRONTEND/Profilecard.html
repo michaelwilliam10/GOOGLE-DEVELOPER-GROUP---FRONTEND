@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card - Kartu Profile Utama - Michael William Setiawan Wee</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .profile-card {
+            width: 100%;
+            max-width: 900px;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            transition: all 0.3s ease;
+        }
+        
+        .profile-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        
+        .left-section {
+            background: linear-gradient(to bottom, #1a2980, #26d0ce);
+            padding: 40px 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        
+        .photo-container {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            overflow: hidden;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .profile-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .photo-container:hover .profile-photo {
+            transform: scale(1.05);
+        }
+        
+        .name {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .title {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .university {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background-color: rgba(255, 255, 255, 0.15);
+            padding: 12px 20px;
+            border-radius: 50px;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+        
+        
+        .right-section {
+            padding: 40px 35px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .section-title {
+            color: #1a2980;
+            font-size: 22px;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #26d0ce;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-title i {
+            color: #26d0ce;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .info-item {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        
+        .info-label {
+            font-size: 14px;
+            color: #666;
+            font-weight: 600;
+        }
+        
+        .info-value {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1a2980;
+        }
+        
+        .hobbies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+        
+        .hobby {
+            background-color: #f0f8ff;
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #1a2980;
+            border: 1px solid #d1e7ff;
+        }
+        
+        .about {
+            line-height: 1.6;
+            color: #444;
+            text-align: justify;
+        }
+        
+        .gdg-badge {
+            background: linear-gradient(45deg, #4285f4, #34a853, #fbbc05, #ea4335);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 10px;
+            margin-top: 30px;
+            text-align: center;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 5px 15px rgba(66, 133, 244, 0.3);
+        }
+        
+        
+        @media (max-width: 768px) {
+            .profile-card {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+            }
+            
+            .left-section {
+                padding: 30px 20px;
+            }
+            
+            .right-section {
+                padding: 30px 25px;
+            }
+        }
+        
+        
+        @media (max-width: 480px) {
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .name {
+                font-size: 24px;
+            }
+            
+            .photo-container {
+                width: 180px;
+                height: 180px;
+            }
+            
+            .section-title {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-card">
+        <!-- foto -->
+        <div class="left-section">
+            <div class="photo-container">
+                <img src="c:\Users\MICHAEL WILLIAM\Downloads\WhatsApp Image 2025-12-21 at 12.15.25 AM.jpeg" alt="Foto Michael William Setiawan Wee" class="profile-photo">
+            </div>
+            <h1 class="name">Michael William Setiawan Wee</h1>
+            <p class="title">Mahasiswa Telkom University Kampus Bandung</p>
+            <div class="university">
+                <i class="fas fa-university"></i>
+                <span>Telkom University</span>
+            </div>
+        </div>
+        
+       <!-- informasi pribadi -->
+        <div class="right-section">
+            <h2 class="section-title"><i class="fas fa-info-circle"></i> Informasi Pribadi</h2>
+            
+            <div class="info-grid">
+                <div class="info-item">
+                    <span class="info-label">Fakultas</span>
+                    <span class="info-value">Fakultas Rekayasa Industri</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Jurusan</span>
+                    <span class="info-value">S1 SISTEM INFORMASI</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Semester</span>
+                    <span class="info-value">Semester 3</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Domisili</span>
+                    <span class="info-value">Bandung, Jawa Barat</span>
+                </div>
+            </div>
+            
+            <h2 class="section-title"><i class="fas fa-heart"></i> Hobi & Minat</h2>
+            <div class="hobbies">
+                <div class="hobby">Programming</div>
+                <div class="hobby">Desain UI/UX</div>
+                <div class="hobby">Membaca Novel dan bermain game</div>
+            </div>
+            
+            <h2 class="section-title"><i class="fas fa-user"></i> Tentang Saya</h2>
+            <p class="about">
+                Saya adalah mahasiswa Telkom University yang sedang menempuh pendidikan di jurusan Sistem Informasi. 
+                Saya sangat tertarik dengan perkembangan teknologi dan hal baru lainnya, khususnya dalam bidang pengembangan UI/UX
+                dan jaringan cloud. Selain belajar di kampus, saya aktif mengikuti berbagai komunitas 
+                seperti Google Developer Groups, DCN TelU dan lainnya untuk menambah wawasan dan keterampilan. Saya memiliki semangat 
+                belajar yang tinggi dan selalu mencari peluang baru untuk berkembang di dunia teknologi dan kompetisi.
+            </p>
+            
+            <div class="gdg-badge">
+                <i class="fab fa-google"></i>
+                <span>Google Developer Groups Member</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+      
+        document.addEventListener('DOMContentLoaded', function() {
+            const profileCard = document.querySelector('.profile-card');
+            profileCard.style.opacity = '0';
+            profileCard.style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+                profileCard.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                profileCard.style.opacity = '1';
+                profileCard.style.transform = 'translateY(0)';
+            }, 100);
+            
+           //hobi
+            const hobbies = document.querySelectorAll('.hobby');
+            hobbies.forEach(hobby => {
+                hobby.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                    this.style.transition = 'transform 0.3s ease';
+                });
+                
+                hobby.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
